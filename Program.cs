@@ -12,7 +12,7 @@ namespace Poe
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+          
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
@@ -28,14 +28,14 @@ namespace Poe
             var app = builder.Build();
 
 
-            //
+            
             using (var scope = app.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 await SeedData.InitializeAsync(services);
             }
 
-            // Configure the HTTP request pipeline.
+            
             if (app.Environment.IsDevelopment())
             {
                 app.UseMigrationsEndPoint();
@@ -49,8 +49,8 @@ namespace Poe
 
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseStaticFiles();//
-            app.UseAuthentication();//
+            app.UseStaticFiles();
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapStaticAssets();
