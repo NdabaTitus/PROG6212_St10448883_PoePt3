@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Payment Simulation";
+}
+
+<h2>Payment Simulation</h2>
+<p>Use this to calculate what you will earn based on rate and number of jobs. This does not save anything.</p>
+
+<div class="form-group">
+    <label for="rateInput">Rate per Job (R)</label>
+    <input id="rateInput" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="jobsInput">Number of Jobs</label>
+    <input id="jobsInput" class="form-control" />
+</div>
+
+<div class="form-group">
+    <label for="totalDisplay">Total Amount (R)</label>
+    <input id="totalDisplay" class="form-control" readonly />
+</div>
+
+<script>
+    function updateTotal() {
+        var rateText = document.getElementById("rateInput").value;
+        var jobsText = document.getElementById("jobsInput").value;
+
+        var rate = parseFloat(rateText);
+        var jobs = parseInt(jobsText);
+
+        if (isNaN(rate) || isNaN(jobs)) {
+            document.getElementById("totalDisplay").value = "";
+            return;
+        }
+
+        var total = rate * jobs;
+        document.getElementById("totalDisplay").value = total.toFixed(2);
+    }
+
+    document.getElementById("rateInput").addEventListener("input", updateTotal);
+    document.getElementById("jobsInput").addEventListener("input", updateTotal);
+</script>

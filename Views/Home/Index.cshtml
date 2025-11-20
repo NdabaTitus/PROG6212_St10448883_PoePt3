@@ -1,0 +1,247 @@
+﻿@{
+    ViewData["Title"] = "BuildTrack Claim System";
+    var isWorker = User.IsInRole("Worker");
+    var isProjectManager = User.IsInRole("ProjectManager");
+    var isConstructionManager = User.IsInRole("ConstructionManager");
+    var isHr = User.IsInRole("HR");
+}
+
+<style>
+    /* Main Header Card */
+    .home-header {
+        background: #ffffff;
+        border-radius: 18px;
+        padding: 2.2rem;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+        .home-header h1 {
+            font-weight: 700;
+            font-size: 2.4rem;
+            margin-bottom: 0.6rem;
+            color: #2c3e50;
+        }
+
+        .home-header p {
+            font-size: 1.05rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+    /* Role Buttons */
+    .role-buttons .btn {
+        padding: 0.65rem 1.3rem;
+        border-radius: 10px;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+        background: white;
+        border-radius: 16px;
+        padding: 1.6rem;
+        border: 1px solid #e5e7eb;
+        text-align: center;
+        transition: 0.2s;
+    }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+    .feature-icon {
+        font-size: 2.4rem;
+        margin-bottom: 0.8rem;
+        color: #3498db;
+    }
+
+    .feature-title {
+        font-weight: 600;
+        margin-bottom: 0.4rem;
+        font-size: 1.2rem;
+    }
+
+    .feature-desc {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    /* Workflow Section */
+    .workflow-box {
+        background: #f8fafc;
+        padding: 1.5rem;
+        border-radius: 16px;
+        border: 1px solid #e5e7eb;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .workflow-title {
+        font-weight: 700;
+        margin-bottom: .6rem;
+        color: #2c3e50;
+    }
+
+    .workflow-flow {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #555;
+    }
+
+    /* Login Accounts (Dark Card) */
+    .login-card {
+        background: #1e293b;
+        color: #f9fafb;
+        border-radius: 16px;
+        padding: 1.6rem;
+        margin-top: 2rem;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+        .login-card h5 {
+            font-weight: 600;
+            margin-bottom: .8rem;
+        }
+
+        .login-card table {
+            width: 100%;
+            font-size: 0.85rem;
+        }
+
+        .login-card th {
+            color: #cbd5e1;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            padding-bottom: .4rem;
+        }
+
+        .login-card td {
+            padding: .35rem 0;
+            color: #e2e8f0;
+        }
+
+        .login-card small {
+            color: #94a3b8;
+        }
+</style>
+
+
+<div class="container">
+
+    <!-- Header Section -->
+    <div class="home-header">
+        <h1>BuildTrack Claim System</h1>
+        <p>A unified platform for managing Work Claims, Review Processes, and HR payroll actions.</p>
+
+        <!-- Role-Specific Buttons -->
+        <div class="d-flex flex-wrap justify-content-center gap-2 role-buttons">
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a asp-area="Identity" asp-page="/Account/Login" class="btn btn-primary">Log In</a>
+            }
+            else if (isWorker)
+            {
+                <a asp-controller="WorkClaims" asp-action="Create" class="btn btn-primary">Submit Work</a>
+                <a asp-controller="WorkClaims" asp-action="MyClaims" class="btn btn-outline-secondary">My Claims</a>
+            }
+            else if (isProjectManager)
+            {
+                <a asp-controller="WorkClaims" asp-action="PmPending" class="btn btn-primary">PM Review</a>
+                <a asp-controller="WorkClaims" asp-action="PmNotifications" class="btn btn-outline-secondary">Notifications</a>
+            }
+            else if (isConstructionManager)
+            {
+                <a asp-controller="WorkClaims" asp-action="CmReviewList" class="btn btn-primary">CM Review</a>
+                <a asp-controller="WorkClaims" asp-action="CmNotifications" class="btn btn-outline-secondary">Notifications</a>
+            }
+            else if (isHr)
+            {
+                <a asp-controller="WorkClaims" asp-action="HrAllClaims" class="btn btn-primary">HR Dashboard</a>
+                <a asp-controller="WorkClaims" asp-action="HrSummary" class="btn btn-outline-secondary">Reports</a>
+            }
+        </div>
+    </div>
+
+
+    <!-- Features Section -->
+    <div class="row g-4 mt-2">
+
+        <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+                <div class="feature-icon">🧑‍🔧</div>
+                <div class="feature-title">Worker Submissions</div>
+                <div class="feature-desc">Submit completed tasks and track approval status.</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+                <div class="feature-icon">📋</div>
+                <div class="feature-title">Project Manager Review</div>
+                <div class="feature-desc">Approve or reject claims with notes.</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+                <div class="feature-icon">🏗️</div>
+                <div class="feature-title">Construction Manager</div>
+                <div class="feature-desc">Final verification before HR processing.</div>
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-6">
+            <div class="feature-card">
+                <div class="feature-icon">💼</div>
+                <div class="feature-title">HR & Payroll</div>
+                <div class="feature-desc">Mark payments, manage employees, export CSV.</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Workflow Section -->
+    <div class="workflow-box mt-4">
+        <div class="workflow-title">Workflow</div>
+        <div class="workflow-flow">
+            Worker → Project Manager → Construction Manager → HR (Final Approval)
+        </div>
+        <div class="workflow-flow mt-2" style="font-size:0.9rem; color:#666;">
+            *Includes automated reason checks & alert notifications
+        </div>
+    </div>
+
+
+    <!-- Test Accounts -->
+    <div class="login-card">
+
+        <h5>Test Login Accounts</h5>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>HR</td><td>hr@site.com</td><td>Hr@123!</td></tr>
+                <tr><td>Project Manager</td><td>pm@site.com</td><td>Pm@123!</td></tr>
+                <tr><td>Construction Manager</td><td>cm@site.com</td><td>Cm@123!</td></tr>
+                <tr><td>Worker</td><td>worker@site.com</td><td>Worker@123!</td></tr>
+            </tbody>
+        </table>
+
+        <small>Use these accounts to test the full workflow end-to-end.</small>
+    </div>
+
+</div>
+

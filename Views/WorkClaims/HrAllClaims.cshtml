@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Poe.Models.WorkClaim>
+
+@{
+    ViewData["Title"] = "All Claims (HR)";
+}
+
+<h2>All Claims (HR)</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Worker</th>
+            <th>Department</th>
+            <th>Rate (R)</th>
+            <th>Jobs</th>
+            <th>Total (R)</th>
+            <th>Status</th>
+            <th>Reject Reason</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.Id</td>
+                <td>@claim.CreatedAt.ToString("yyyy-MM-dd")</td>
+                <td>@claim.Name @claim.Surname</td>
+                <td>@claim.Department</td>
+                <td>@claim.RatePerJob.ToString("F2")</td>
+                <td>@claim.NumberOfJobs</td>
+                <td>@claim.TotalAmount.ToString("F2")</td>
+                <td>@claim.Status</td>
+                <td>@claim.RejectReason</td>
+                <td>
+                    @if (claim.Status == "CM Approved")
+                    {
+                        <a asp-action="HrMarkPaid" asp-route-id="@claim.Id" class="btn btn-success btn-sm">Mark Paid</a>
+                    }
+                    else if (claim.Status == "Paid")
+                    {
+                        <span class="text-success fw-bold">Paid</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

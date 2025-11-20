@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Poe.Models.WorkClaim>
+
+@{
+    ViewData["Title"] = "My Claims";
+}
+
+<h2 class="mb-4">My Claims</h2>
+
+<div class="row">
+    @foreach (var claim in Model)
+    {
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-header">
+                    Claim #@claim.Id
+                    @if (claim.Status == "Approved")
+                    {
+                        <span class="badge badge-approved float-end">Approved</span>
+                    }
+                    else if (claim.Status == "Submitted")
+                    {
+                        <span class="badge badge-submitted float-end">Submitted</span>
+                    }
+                    else if (claim.Status.Contains("Rejected"))
+                    {
+                        <span class="badge badge-rejected float-end">Rejected</span>
+                    }
+                </div>
+                <div class="card-body">
+                    <p><strong>Date:</strong> @claim.CreatedAt:yyyy-MM-dd</p>
+                    <p><strong>Department:</strong> @claim.Department</p>
+                    <p><strong>Rate per Job:</strong> @claim.RatePerJob.ToString("F2") R</p>
+                    <p><strong>Number of Jobs:</strong> @claim.NumberOfJobs</p>
+                    <p><strong>Total:</strong> @claim.TotalAmount.ToString("F2") R</p>
+                    @if (!string.IsNullOrEmpty(claim.RejectReason))
+                    {
+                        <p><strong>Reject Reason:</strong> @claim.RejectReason</p>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<a asp-action="Create" class="btn btn-primary mt-3"><i class="fas fa-plus"></i> Create New Claim</a>

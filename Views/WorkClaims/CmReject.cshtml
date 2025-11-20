@@ -1,0 +1,29 @@
+﻿@model Poe.Models.WorkClaim
+
+@{
+    ViewData["Title"] = "CM Reject Claim";
+}
+
+<h2>Reject Claim (Construction Manager)</h2>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Claim Id:</strong> @Model.Id</p>
+        <p><strong>Worker:</strong> @Model.Name @Model.Surname</p>
+        <p><strong>Department:</strong> @Model.Department</p>
+        <p><strong>Total Amount (R):</strong> @Model.TotalAmount.ToString("F2")</p>
+        <p><strong>Current Status:</strong> @Model.Status</p>
+    </div>
+</div>
+
+<form asp-action="CmRejectConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <div class="form-group">
+        <label for="rejectReason">Reject Reason (optional)</label>
+        <textarea name="rejectReason" id="rejectReason" class="form-control" rows="4"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Confirm Reject</button>
+    <a asp-action="CmReviewList" class="btn btn-secondary">Cancel</a>
+</form>

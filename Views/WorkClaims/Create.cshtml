@@ -1,0 +1,91 @@
+﻿@model Poe.Models.WorkClaim
+
+@{
+    ViewData["Title"] = "New Work Claim";
+}
+
+<h2>New Work Claim</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Surname"></label>
+        <input asp-for="Surname" class="form-control" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Department"></label>
+        <input asp-for="Department" class="form-control" />
+        <span asp-validation-for="Department" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="RatePerJob"></label>
+        <input asp-for="RatePerJob" class="form-control" id="rateInput" />
+        <span asp-validation-for="RatePerJob" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NumberOfJobs"></label>
+        <input asp-for="NumberOfJobs" class="form-control" id="jobsInput" />
+        <span asp-validation-for="NumberOfJobs" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Total Amount (R)</label>
+        <!-- This input will show the calculated total.
+             It is readonly so the worker cannot change it manually. -->
+        <input class="form-control" id="totalDisplay" readonly />
+    </div>
+
+    <!-- We keep the real TotalAmount hidden; server will also calculate again. -->
+    <input type="hidden" asp-for="TotalAmount" id="totalHidden" />
+
+    <button type="submit" class="btn btn-primary">Submit Claim</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+
+    <script>
+        // This function reads rate and number of jobs
+        // and calculates the total amount on the page.
+        function updateTotal() {
+            // Read the text from the rate box.
+            var rateText = document.getElementById("rateInput").value;
+
+            // Read the text from the number of jobs box.
+            var jobsText = document.getElementById("jobsInput").value;
+
+            // Convert both values to numbers.
+            var rate = parseFloat(rateText);
+            var jobs = parseInt(jobsText);
+
+            // If either value is not a number, show empty total.
+            if (isNaN(rate) || isNaN(jobs)) {
+                document.getElementById("totalDisplay").value = "";
+                document.getElementById("totalHidden").value = "";
+                return;
+            }
+
+            // Calculate total = rate * jobs.
+            var total = rate * jobs;
+
+            // Display the total in the read-only box.
+            document.getElementById("totalDisplay").value = total.toFixed(2);
+
+            // Also copy to hidden field (so it posts back, but server will recalc anyway).
+            document.getElementById("totalHidden").value = total;
+        }
+
+        // When the user types in rate or jobs, recalculate.
+        document.getElementById("rateInput").addEventListener("input", updateTotal);
+        document.getElementById("jobsInput").addEventListener("input", updateTotal);
+    </script>
+}

@@ -1,0 +1,117 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Poe
+build_property.RootNamespace = Poe
+build_property.ProjectDir = C:\Users\lab_services_student\Desktop\PROG6212_POE\Poe\Poe\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\lab_services_student\Desktop\PROG6212_POE\Poe\Poe
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Hr/AddEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJcQWRkRW1wbG95ZWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Hr/EmployeeList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJcRW1wbG95ZWVMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Hr/HrSummary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSHJcSHJTdW1tYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/CmNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xDbU5vdGlmaWNhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/CmReject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xDbVJlamVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/CmReviewList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xDbVJldmlld0xpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/HrAllClaims.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xIckFsbENsYWltcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/MyClaims.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xNeUNsYWltcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/PaymentSimulation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xQYXltZW50U2ltdWxhdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/PmAddReason.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xQbUFkZFJlYXNvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/PmNotifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xQbU5vdGlmaWNhdGlvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/PmPending.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xQbVBlbmRpbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/WorkClaims/PmReject.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV29ya0NsYWltc1xQbVJlamVjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lab_services_student/Desktop/PROG6212_POE/Poe/Poe/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-x2rvxua3oy

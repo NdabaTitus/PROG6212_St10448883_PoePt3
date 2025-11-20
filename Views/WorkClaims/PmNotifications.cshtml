@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "PM Notifications";
+}
+
+<h2>Notifications (Project Manager)</h2>
+
+@if (!Model.Any())
+{
+    <p>No new notifications.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Claim</th>
+                <th>Created</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var n in Model)
+            {
+                <tr>
+                    <td>@n.Message</td>
+                    <td>
+                        @if (n.WorkClaimId.HasValue)
+                        {
+                            <a asp-action="PmAddReason" asp-route-id="@n.WorkClaimId">Go to claim #@n.WorkClaimId</a>
+                        }
+                    </td>
+                    <td>@n.CreatedAt.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>
+                        <a asp-action="PmMarkNotificationRead" asp-route-id="@n.Id" class="btn btn-sm btn-secondary">Mark as read</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

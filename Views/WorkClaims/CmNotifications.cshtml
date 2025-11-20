@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Poe.Models.Notification>
+
+@{
+    ViewData["Title"] = "Notifications";
+}
+
+<h2>Notifications for Construction Manager</h2>
+
+@if (!Model.Any())
+{
+    <p>No new notifications.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Message</th>
+                <th>Created</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var n in Model)
+            {
+                <tr>
+                    <td>@n.Message</td>
+                    <td>@n.CreatedAt.ToString("yyyy-MM-dd HH:mm")</td>
+                    <td>
+                        <a asp-action="CmMarkNotificationRead" asp-route-id="@n.Id" class="btn btn-sm btn-primary">Mark as Read</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

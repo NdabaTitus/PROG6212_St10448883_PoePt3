@@ -1,0 +1,135 @@
+/* Base font sizing */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f6f8; /* soft light background */
+    color: #2c3e50;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #5e4b8b;
+    border-color: #5e4b8b;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+    .btn-primary:hover {
+        background-color: #7d66c1;
+        border-color: #7d66c1;
+    }
+
+.btn-outline-dark {
+    border-radius: 50px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #2c3e50 !important;
+}
+
+    .navbar .nav-link {
+        color: white !important;
+        font-weight: 500;
+    }
+
+        .navbar .nav-link:hover {
+            color: #f39c12 !important;
+        }
+
+/* Hero section */
+.hero-section {
+    min-height: 60vh;
+    border-radius: 24px;
+    padding: 3rem;
+    background: linear-gradient(135deg, #77ed96, #b067f5, #f2f527);
+    color: #111;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    max-width: 520px;
+    margin-top: 1rem;
+}
+
+.hero-mini-stat {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 16px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.85rem;
+    min-width: 160px;
+    margin-top: 0.5rem;
+}
+
+.hero-mini-stat-label {
+    color: #4b5563;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.hero-mini-stat-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* Quick links cards */
+.quick-link-card {
+    border-radius: 18px;
+    padding: 1.2rem 1.3rem;
+    border: 1px solid rgba(148,163,184,0.3);
+    background: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+    .quick-link-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+        border-color: #5e4b8b;
+    }
+
+.quick-link-pill {
+    display: inline-flex;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    background: rgba(94,75,139,0.08);
+    color: #4b5563;
+    margin-bottom: 0.4rem;
+}
+
+/* Logo styles */
+.hero-logo img, .navbar-logo img {
+    height: 50px;
+}
+
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 2rem 1.4rem;
+        border-radius: 18px;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+}

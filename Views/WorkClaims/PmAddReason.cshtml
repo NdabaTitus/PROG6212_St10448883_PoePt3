@@ -1,0 +1,29 @@
+﻿@model Poe.Models.WorkClaim
+
+@{
+    ViewData["Title"] = "Add Reject Reason";
+}
+
+<h2>Add Reject Reason (PM)</h2>
+
+<div class="card mb-3">
+    <div class="card-body">
+        <p><strong>Claim Id:</strong> @Model.Id</p>
+        <p><strong>Worker:</strong> @Model.Name @Model.Surname</p>
+        <p><strong>Department:</strong> @Model.Department</p>
+        <p><strong>Total Amount (R):</strong> @Model.TotalAmount.ToString("F2")</p>
+    </div>
+</div>
+
+<form asp-action="PmAddReasonConfirmed" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+
+    <div class="form-group">
+        <label for="rejectReason">Reject Reason (now required)</label>
+        <textarea name="rejectReason" id="rejectReason" class="form-control" rows="4"></textarea>
+        <span asp-validation-summary="All" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-danger">Save Reason</button>
+    <a asp-action="PmPending" class="btn btn-secondary">Cancel</a>
+</form>

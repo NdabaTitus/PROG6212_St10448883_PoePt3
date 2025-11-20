@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Poe.Models.WorkClaim>
+
+@{
+    ViewData["Title"] = "PM Pending Claims";
+}
+
+<h2>Pending Claims (Project Manager)</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Worker</th>
+            <th>Department</th>
+            <th>Rate (R)</th>
+            <th>Jobs</th>
+            <th>Total (R)</th>
+            <th>Status</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var claim in Model)
+        {
+            <tr>
+                <td>@claim.Id</td>
+                <td>@claim.CreatedAt.ToString("yyyy-MM-dd")</td>
+                <td>@claim.Name @claim.Surname</td>
+                <td>@claim.Department</td>
+                <td>@claim.RatePerJob.ToString("F2")</td>
+                <td>@claim.NumberOfJobs</td>
+                <td>@claim.TotalAmount.ToString("F2")</td>
+                <td>@claim.Status</td>
+                <td>
+                    <a asp-action="PmApprove" asp-route-id="@claim.Id" class="btn btn-success btn-sm">Approve</a>
+                    <a asp-action="PmReject" asp-route-id="@claim.Id" class="btn btn-danger btn-sm">Reject</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
