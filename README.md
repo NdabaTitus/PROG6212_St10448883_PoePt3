@@ -58,7 +58,7 @@ Worker > Project Manager > Construction Manager > HR
 ## Youtube & Repository Links
 
 * GitHub Repository: [https://github.com/NdabaTitus/PROG6212_St10448883_PoePt3.git)
-* YouTube: [https://www.youtube.com/your-video-link](https://www.youtube.com/your-video-link)
+* YouTube: [https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Fyoutu.be%2FkyBQj6tK5eo%3Fsi%3D5-q1EnhjoHDhtnj8&data=05%7C02%7CST10448883%40imconnect.edu.za%7C19fde6db865949e79e8b08de28f927d6%7Ce10c8f44f469448fbc0dd781288ff01b%7C0%7C0%7C638993247791607770%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=lYtnfDe7x3P9E%2FK53mcGPKF6lRpfTIeo9hIupaKyfYs%3D&reserved=0)
 
 ## Author
 
